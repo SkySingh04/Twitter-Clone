@@ -2,10 +2,16 @@
 import { IoMdClose } from "react-icons/io";
 import { FaXTwitter } from "react-icons/fa6";
 import classes from "./createAccModal.module.css";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth , db } from "@/firbase";
+import { doc, getDoc , setDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
+import { Timestamp } from "firebase/firestore";
+import { useRouter } from "next/navigation";
 
 export default function CreateAccModal({ closeModal }) {
   // const [inputType, setInputType] = useState("phone");
+  const router = useRouter()
   const [days, setDays] = useState([]);
   const [years, setYears] = useState([]);
 
@@ -31,6 +37,49 @@ export default function CreateAccModal({ closeModal }) {
     // Handle change logic here
   };
 
+  const handleSubmit = () => {
+    const name = document.querySelector('input[name="name"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const bio = document.querySelector('input[name="bio"]').value;
+    const username = document.querySelector('input[name="username"]').value;
+    const password = document.querySelector('input[name="password"]').value;
+    const bannerImage = document.querySelector('input[name="banner"]').value;
+    const profileImage = document.querySelector('input[name="profileImg"]').value;
+    const month = document.querySelector('select[name="month"]').value;
+    const day = document.querySelector('select[name="day"]').value;
+    const year = document.querySelector('select[name="year"]').value;
+  
+    createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+      // Signed up 
+      const loggedInuser = userCredential.user;
+      const user = {
+        name,
+        bio,
+        bannerImage,
+        profileImage,
+        followers:0,
+        following:0,
+        username,
+        tweets : []
+      };
+        const userDocRef = doc(db, 'users', loggedInuser.uid);
+
+        setDoc(userDocRef , user).then(() => {
+          console.log('User document created with UID: ', user.uid);
+          router.push("/")
+        })
+        .catch((error) => {
+          console.error('Error creating user document: ', error);
+        
+      })
+    }
+  ).catch((error)=>{
+    console.log(error)
+  }
+) 
+  }
+
+    
   // function handleChangeType() {
   //   setInputType((prev) => (prev === "phone" ? "email" : "phone"));
   // }
@@ -49,14 +98,23 @@ export default function CreateAccModal({ closeModal }) {
         <main className={classes.main}>
           <h1 className={classes.title}>Create your account</h1>
           <input placeholder="Name" className={classes.input} name="name" />
+          <input placeholder="Username" className={classes.input} name="username" />
           <input placeholder="Email" className={classes.input} name="email" />
+          <input placeholder="Bio" className={classes.input} name="bio" />
           <input
-            placeholder="Banner url"
+                type="password"
+                placeholder="Password"
+                className={classes.input}
+                name="password"
+                onChange={handleChange}
+              />
+          <input
+            placeholder="Banner Image"
             className={classes.input}
             name="banner"
           />
           <input
-            placeholder="profile image url"
+            placeholder="Profile Image"
             className={classes.input}
             name="profileImg"
           />
@@ -144,7 +202,7 @@ export default function CreateAccModal({ closeModal }) {
             </div>
           </div>
 
-          <button className={classes.next}>Next</button>
+          <button onClick={handleSubmit}  className={classes.next}>Submit</button>
         </main>
       </div>
     </>
