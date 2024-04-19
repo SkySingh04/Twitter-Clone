@@ -6,7 +6,7 @@ import "./card.css";
 
 const Card = ({ user, tweet }) => {
   return (
-    <div className="bg-gray-900 rounded-lg shadow-md p-4 mt-4 flex gap-4">
+    <div className="bg-black border-y  rounded-lg shadow-md p-4 mt-4 flex gap-4">
       <div>
         <img
           className="h-12 w-12 rounded-full"
