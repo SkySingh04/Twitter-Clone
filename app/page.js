@@ -11,18 +11,20 @@ import RightSidebar from "./components/RightSidebar";
 import Input from "./components/Input";
 export default function Home() {
   const [usersInfoList, setUsersInfoList] = useState([]);
+  const [user , setUser] = useState(null)
   const router = useRouter()
-  // useEffect(() => {
-  //   // Check the user's authentication state
-  //   onAuthStateChanged(auth, (user) => {
-  //     if (user) {
-  //       setUser(user);
-  //     } else {
-  //       // Redirect unauthenticated users to the login page
-  //       router.push('/login');
-  //     }
-  //   })
-  // })
+  
+  useEffect(() => {
+    // Check the user's authentication state
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        // Redirect unauthenticated users to the login page
+        router.push('/login');
+      }
+    })
+  })
   useEffect(() => {
   const fetchUserData = async () => {
     try {
@@ -49,7 +51,7 @@ export default function Home() {
 
   return (
     <div className="flex w-full">
-      <LeftSideBar />
+      <LeftSideBar  user={user}/>
     <main className="main-content w-full p-4">
     <Input />
     {usersInfoList.length!==0 && usersInfoList.map((user, index) => (
