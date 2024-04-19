@@ -6,6 +6,8 @@ import { collection  , getDocs } from 'firebase/firestore';
 
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import LeftSideBar from "./components/LeftSideBar";
+import RightSidebar from "./components/RightSidebar";
 export default function Home() {
   const [usersInfoList, setUsersInfoList] = useState([]);
   const [user , setUser] = useState(null)
@@ -46,7 +48,9 @@ export default function Home() {
 
 
   return (
-    <main className="flex min-h-screen px-24 py-12 flex-col">
+    <div className="flex w-full">
+      <LeftSideBar />
+    <main className="main-content w-full p-4">
     {usersInfoList.length!==0 && usersInfoList.map((user, index) => (
       user.tweets &&
           user.tweets.map((tweet) => (
@@ -55,5 +59,7 @@ export default function Home() {
     ))
           }
     </main>
+    <RightSidebar />
+    </div>
   );
 }

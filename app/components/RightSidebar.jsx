@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '@/firbase';
-
+import './rightSidebar.css';
 const RightSidebar = () => {
   const [usersInfoList, setUsersInfoList] = useState([]);
   useEffect(() => {
