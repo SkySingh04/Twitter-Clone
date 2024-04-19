@@ -1,0 +1,13 @@
+.loginCon{
+    display: flex;
+    height: 100vh;
+}
+.logoCon{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formCon{
+    flex: 1;
+}
