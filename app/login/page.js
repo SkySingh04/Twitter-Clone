@@ -5,6 +5,7 @@ import { FaApple } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import CreateAccModal from "../components/createAccModal";
 import { useState } from "react";
+import LoginModal from "../components/loginModal";
 export default function LoginPage() {
   const [isopenCreateModal, setisOpenCreateModal] = useState(false);
   const [isopenLoginModal, setisOpenLoginModal] = useState(false);
@@ -59,13 +60,14 @@ export default function LoginPage() {
           <div>
             <div className={classes.createAccCon}>
               <h1 className={classes.haveAccHead}>Already have an Account</h1>
-              <button className={classes.haveAcc}>Sign in</button>
+              <button className={classes.haveAcc} onClick={handleOpenLogin}>Sign in</button>
             </div>
           </div>
         </div>
       </div>
       <div className={classes.footer}></div>
       {isopenCreateModal && <CreateAccModal closeModal={handleCloseCreateAcc}/>}
+      {isopenLoginModal && <LoginModal closeModal={handleCloseLogin}/>}
     </div>
   );
 }
