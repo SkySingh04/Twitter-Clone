@@ -40,7 +40,7 @@ const ProfilePage = () => {
   return (
     <div className="flex">
     <LeftSideBar user={user} />
-    <div className="main-content bg-black text-white">
+    <div className="main-content w-full bg-black text-white">
       <div className="h-[60px] px-2 mb-2 flex items-center ">
         <button
           className=" bg-gray-800 rounded-full p-2"
