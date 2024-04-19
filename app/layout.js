@@ -16,6 +16,23 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const usersInfo = [
+    {
+      img: '/empty-profile.png',
+      name: 'John Doe',
+      username: '@johndoe'
+    },
+    {
+      img: '/empty-profile.png',
+      name: 'John Doe',
+      username: '@johndoe'
+    },
+    {
+      img: '/empty-profile.png',
+      name: 'John Doe',
+      username: '@johndoe'
+    },
+  ]
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -44,7 +61,7 @@ export default function RootLayout({ children }) {
             </Link>
             <Link href="/post">
               <div className="button flex logo-item bg-blue-500 gap-2 px-4 py-2 rounded-lg text-center">
-              <FaFeather size={20}/>
+                <FaFeather size={20} />
                 <div>Post</div>
               </div>
             </Link>
@@ -52,23 +69,28 @@ export default function RootLayout({ children }) {
           <div className="profile-card flex gap-2">
             <img src={"/empty-profile.png"} alt="profile" />
             <div className="info">
-            <div className="profile-name">John Doe</div>
-            <div className="profile-username">@johndoe</div>
+              <div className="profile-name">John Doe</div>
+              <div className="profile-username">@johndoe</div>
             </div>
           </div>
         </div>
 
-        <div className="w-full">{children}</div>
-        <div className="right-side bar">
-            <div>
-              <div>
-                  
-You might like
-              </div>
-              <div>
-
-              </div>
+        <div className="w-full main-content">{children}</div>
+        <div className="right-side-bar">
+          <div className="user-card">
+            <div className="heading mb-8  ">You might like</div>
+            <div className="flex flex-col gap-4">
+                {usersInfo.map((user, index) => (
+                  <div key={index} className="profile-card flex gap-2">
+                    <img src={user.img} alt="profile" />
+                    <div className="info">
+                      <div className="profile-name">{user.name}</div>
+                      <div className="profile-username">{user.username}</div>
+                    </div>
+                  </div>
+                ))}
             </div>
+          </div>
         </div>
       </body>
     </html>
