@@ -10,8 +10,6 @@ const ProfilePage = () => {
   const pathname = usePathname();
   const userid = pathname.split("/").pop();
   const [user, setUser] = useState(null);
-  const bgImage =
-    "https://external-preview.redd.it/C-QuXdQMBpp-nBHnh-5liLgNBrlH2hHqQqO6gtZcm-I.jpg?auto=webp&s=c1da15979e0a23426d24e86e06cabaa0d2becc4b";
 
   useEffect(() => {
     const fetchUserData = async () => {
