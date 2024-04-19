@@ -49,6 +49,8 @@ export default function CreateAccModal({ closeModal }) {
         <main className={classes.main}>
           <h1 className={classes.title}>Create your account</h1>
           <input placeholder="Name" className={classes.input} name="name" />
+          <input placeholder="Banner url" className={classes.input} name="banner" />
+          <input placeholder="profile image url" className={classes.input} name="profileImg" />
           {inputType === "phone" && (
             <input placeholder="Phone" className={classes.input} name="phone" />
           )}
