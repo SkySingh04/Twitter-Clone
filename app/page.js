@@ -1,3 +1,10 @@
+import LeftSideBar from "./components/LeftSideBar";
+import RightSidebar from "./components/RightSidebar";
+
 export default function Home() {
-  return <main className="flex min-h-screen px-24 py-12"></main>;
+  return <main className="flex">
+    <LeftSideBar />
+    <div className="main-content w-full"></div>
+    <RightSidebar />
+  </main>;
 }

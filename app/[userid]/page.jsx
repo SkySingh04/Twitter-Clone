@@ -4,6 +4,8 @@ import { doc, getDoc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Card from "../components/Card";
+import LeftSideBar from "../components/LeftSideBar";
+import RightSidebar from "../components/RightSidebar";
 // import { auth, db } from '../../firebase';
 
 const ProfilePage = () => {
@@ -36,7 +38,9 @@ const ProfilePage = () => {
   }
 
   return (
-    <div className="bg-black text-white">
+    <div className="flex">
+    <LeftSideBar />
+    <div className="main-content bg-black text-white">
       <div className="h-[60px] px-2 mb-2 flex items-center ">
         <button
           className=" bg-gray-800 rounded-full p-2"
@@ -120,6 +124,9 @@ const ProfilePage = () => {
             <Card key={tweet.id} tweet={tweet} user={user} />
           ))}
       </div>
+
+    </div>
+    <RightSidebar />
     </div>
   );
 };
