@@ -2,7 +2,7 @@
 import React ,{useState , useEffect} from 'react'
 import { collection  , getDocs } from 'firebase/firestore';
 import { db } from '@/firbase';
-
+import './rightSidebar.css';
 const RightSidebar = () => {
     const [usersInfoList, setUsersInfoList] = useState([]);
     useEffect(() => {
@@ -33,7 +33,7 @@ const RightSidebar = () => {
             <div className="heading mb-8  ">You might like</div>
             <div className="flex flex-col gap-4">
                 {usersInfoList.length!==0 && usersInfoList.map((user, index) => (
-                  <div key={index} className="profile-card gap-2">
+                  <div key={index} className="profile-card flex gap-2">
                     <img src={user.profileImage} alt="profile" />
                     <div className="info">
                       <div className="profile-name">{user.name}</div>

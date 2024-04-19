@@ -13,7 +13,7 @@ const LeftSideBar = () => {
             <div className="logo">
               <Link href="/"><Image src={"/logo.jpg"} width={30} height={30} alt="logo" /></Link>
             </div>
-            <Link href="/home">
+            <Link href="/">
               <div className="logo-item flex gap-2">
                 <GoHome size={20} />
                 <div>Home</div>
