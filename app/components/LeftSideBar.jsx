@@ -2,14 +2,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
+import { auth } from "@/firbase";
+import { useRouter } from "next/navigation";
 import { GoHome } from "react-icons/go";
 import { CgProfile } from "react-icons/cg";
 import { FaSearch } from "react-icons/fa";
 import { FaFeather } from "react-icons/fa";
+import { signOut } from 'firebase/auth';
 import "./layout.css";
 const LeftSideBar = ({user}) => {
+  const router = useRouter()
   const handleLogout =()=>{
-    
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      router.push(`/`);
+
+    }).catch((error) => {
+      // An error happened.
+      console.log(error);
+    });
+
+    router.push(`/`);
   }
   // useEffect(() => {
   //   const fetchUserData = async () => {
