@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="sidebar px-8 py-12 h-screen">
+        <div className="sidebar flex flex-col px-8 py-12 h-screen">
           <div className="flex flex-col gap-8">
             <div className="logo">
               <Image src={"/logo.jpg"} width={30} height={30} alt="logo" />
@@ -48,6 +48,13 @@ export default function RootLayout({ children }) {
                 <div>Post</div>
               </div>
             </Link>
+          </div>
+          <div className="profile-card flex gap-2">
+            <img src={"/empty-profile.png"} alt="profile" />
+            <div className="info">
+            <div className="profile-name">John Doe</div>
+            <div className="profile-username">@johndoe</div>
+            </div>
           </div>
         </div>
 
