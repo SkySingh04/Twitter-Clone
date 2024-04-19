@@ -58,7 +58,18 @@ export default function RootLayout({ children }) {
           </div>
         </div>
 
-        {children}
+        <div className="w-full">{children}</div>
+        <div className="right-side bar">
+            <div>
+              <div>
+                  
+You might like
+              </div>
+              <div>
+
+              </div>
+            </div>
+        </div>
       </body>
     </html>
   );

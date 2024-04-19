@@ -1,0 +1,42 @@
+.sidebar {
+  width: 20vw;
+  float: left;
+  justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    border-right: 1px solid #e0e0e0;
+    padding: 1rem;
+    width: 10vw;
+    .logo-item > div {
+      display: none;
+    }
+    .button {
+      border-radius: 50%;
+    }
+  }
+}
+.sidebar > div {
+  @media screen and (max-width: 768px) {
+    align-items: center;
+    justify-content: center;
+  }
+}
+.sidebar .button {
+  justify-content: center;
+  gap: 1rem;
+}
+.profile-card .info{
+    .profile-username{
+        color: grey;
+    }
+    @media screen and (max-width: 768px) {
+        display: none;
+        
+    }
+}
+
+.profile-card img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
