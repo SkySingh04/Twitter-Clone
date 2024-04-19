@@ -1,8 +1,6 @@
 .loginCon {
   display: flex;
   height: 100vh;
-
-
 }
 
 .logoCon {
@@ -10,8 +8,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-
 }
 .formCon {
   padding: 2rem;
@@ -118,7 +114,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .loginCon{
+  .loginCon {
     flex-flow: column;
     padding: 1rem;
   }
