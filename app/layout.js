@@ -7,6 +7,8 @@ import { GoHome } from "react-icons/go";
 import { CgProfile } from "react-icons/cg";
 import { FaSearch } from "react-icons/fa";
 import { FaFeather } from "react-icons/fa";
+import RightSidebar from "./components/RightSidebar";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,7 +41,7 @@ export default function RootLayout({ children }) {
         <div className="sidebar flex flex-col px-8 py-12 h-screen">
           <div className="flex flex-col gap-8">
             <div className="logo">
-              <Image src={"/logo.jpg"} width={30} height={30} alt="logo" />
+              <Link href="/"><Image src={"/logo.jpg"} width={30} height={30} alt="logo" /></Link>
             </div>
             <Link href="/home">
               <div className="logo-item flex gap-2">
@@ -76,22 +78,7 @@ export default function RootLayout({ children }) {
         </div>
 
         <div className="w-full main-content">{children}</div>
-        <div className="right-side-bar">
-          <div className="user-card">
-            <div className="heading mb-8  ">You might like</div>
-            <div className="flex flex-col gap-4">
-                {usersInfo.map((user, index) => (
-                  <div key={index} className="profile-card flex gap-2">
-                    <img src={user.img} alt="profile" />
-                    <div className="info">
-                      <div className="profile-name">{user.name}</div>
-                      <div className="profile-username">{user.username}</div>
-                    </div>
-                  </div>
-                ))}
-            </div>
-          </div>
-        </div>
+        <RightSidebar />
       </body>
     </html>
   );

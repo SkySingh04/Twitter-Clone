@@ -3,6 +3,10 @@
   float: left;
   justify-content: space-between;
   margin-right: 2rem;
+  position: sticky;
+  left: 0;
+  top: 0;
+
   @media screen and (max-width: 768px) {
     border-right: 1px solid #e0e0e0;
     padding: 1rem;
@@ -15,9 +19,12 @@
     }
   }
 }
-.main-content{
+.main-content {
   border-left: 1px solid #e0e0e088;
   border-right: 1px solid #e0e0e088;
+  @media screen and (max-width: 768px) {
+    border-left: none;
+  }
 }
 .sidebar > div {
   @media screen and (max-width: 768px) {
@@ -29,35 +36,34 @@
   justify-content: center;
   gap: 1rem;
 }
-.profile-card .info{
-    .profile-username{
-        color: grey;
-    }
-    @media screen and (max-width: 768px) {
-        display: none;
-        
-    }
-}
-
-.profile-card img{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-.right-side-bar{
-  padding: 3rem 2rem;
-  width: 40vw;
-  @media screen and (max-width: 768px){
+.profile-card .info {
+  .profile-username {
+    color: grey;
+  }
+  @media screen and (max-width: 768px) {
     display: none;
   }
 }
-.user-card{
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 1rem;
-    .heading{
-      font-size: 1.25rem;
-      font-weight: bold;
-    }
+
+.profile-card img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.right-side-bar {
+  padding: 3rem 2rem;
+  width: 40vw;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+.user-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1rem;
+  .heading {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
 }

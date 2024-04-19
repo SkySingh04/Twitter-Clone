@@ -1,0 +1,121 @@
+.backdrop {
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  opacity: 0.2;
+}
+.createCon {
+  border-radius: 1rem;
+  padding: 1rem;
+  position: absolute;
+  top: 3%;
+  left: 25%;
+  width: 50rem;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+.header {
+  display: flex;
+  width: 100%;
+}
+.close {
+  text-align: left;
+  border-radius: 50%;
+  padding: 1rem;
+}
+.close:hover {
+  background-color: rgba(255, 255, 255, 0.151);
+  cursor: pointer;
+}
+
+.logoimg {
+  width: 100%;
+  /* background-color: violet; */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main {
+  flex: 1;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+}
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.input {
+  padding: 1rem 1rem;
+  border-radius: 0.25rem;
+  width: 100%;
+  color: white;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.337);
+  outline: none;
+}
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.466);
+}
+.input:focus,
+.input:active {
+  border: 1px solid rgb(29, 155, 240);
+}
+
+.birthCon {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 0.5rem;
+}
+.birthCon h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.birthCon p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.466);
+}
+.dob {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.5rem;
+}
+.select {
+  padding: 1rem 1rem;
+  border-radius: 0.25rem;
+  flex: 1;
+  color: white;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.337);
+  outline: none;
+}
+.options {
+  background-color: black;
+  color: white;
+}
+.changeType {
+  width: 100%;
+  text-align: end;
+  color: rgb(29, 155, 240);
+  text-decoration: underline;
+}
+.next {
+  margin-top: 1rem;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  color: black;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+}
