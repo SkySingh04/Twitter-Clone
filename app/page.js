@@ -8,6 +8,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import LeftSideBar from "./components/LeftSideBar";
 import RightSidebar from "./components/RightSidebar";
+import Input from "./components/Input";
 export default function Home() {
   const [usersInfoList, setUsersInfoList] = useState([]);
   const router = useRouter()
@@ -50,6 +51,7 @@ export default function Home() {
     <div className="flex w-full">
       <LeftSideBar />
     <main className="main-content w-full p-4">
+    <Input />
     {usersInfoList.length!==0 && usersInfoList.map((user, index) => (
       user.tweets &&
           user.tweets.map((tweet) => (
