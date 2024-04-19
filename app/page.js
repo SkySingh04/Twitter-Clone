@@ -12,6 +12,7 @@ export default function Home() {
   const [usersInfoList, setUsersInfoList] = useState([]);
   const [user , setUser] = useState(null)
   const router = useRouter()
+  
   useEffect(() => {
     // Check the user's authentication state
     onAuthStateChanged(auth, (user) => {
@@ -49,7 +50,7 @@ export default function Home() {
 
   return (
     <div className="flex w-full">
-      <LeftSideBar />
+      <LeftSideBar  user={user}/>
     <main className="main-content w-full p-4">
     {usersInfoList.length!==0 && usersInfoList.map((user, index) => (
       user.tweets &&

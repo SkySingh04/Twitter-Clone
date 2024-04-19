@@ -39,7 +39,7 @@ const ProfilePage = () => {
 
   return (
     <div className="flex">
-    <LeftSideBar />
+    <LeftSideBar user={user} />
     <div className="main-content bg-black text-white">
       <div className="h-[60px] px-2 mb-2 flex items-center ">
         <button
@@ -107,7 +107,7 @@ const ProfilePage = () => {
               <line x1="3" y1="10" x2="21" y2="10" />
             </svg>
             <span className="relative bottom-[19px] left-[25px]">
-              Joined at {user.joinedAt.toDate().toDateString()}
+              Joined at {user.joinedAt?.toDate().toDateString()}
             </span>
           </p>
           <p>
