@@ -8,6 +8,9 @@ import { FaSearch } from "react-icons/fa";
 import { FaFeather } from "react-icons/fa";
 import "./layout.css";
 const LeftSideBar = ({user}) => {
+  const handleLogout =()=>{
+    
+  }
   // useEffect(() => {
   //   const fetchUserData = async () => {
   //     try {
@@ -59,16 +62,26 @@ const LeftSideBar = ({user}) => {
               </div>
             </Link>
           </div>
-          <div className="profile-card flex gap-2">
-          <Link href={`/${user?.uid}`}>
-            <img src={user?.profileImage} alt="profile" />
-            <div className="info">
-              <div className="profile-name">{user?.name}</div>
-              <div className="profile-username">{user?.email}</div>
+          {user ? (
+            <div className="profile-card flex gap-2">
+              <Link href={`/${user?.uid}`}>
+                <img src={user?.profileImage} alt="profile" />
+                <div className="info">
+                  <div className="profile-name">{user?.name}</div>
+                  <div className="profile-username">{user?.email}</div>
+                </div>
+              </Link>
+              <button className="logout-button" onClick={handleLogout}>Logout</button>
             </div>
-          </Link >
-          </div>
-
+          ) : (
+            <div className="profile-card flex gap-2">
+              <div className="info">
+                <div className="profile-name">Guest</div>
+                <div className="profile-username">guest@example.com</div>
+              </div>
+              <a className="logout-button" href="/login">Login</a>
+            </div>
+          )}
         </div>
     </div>
   )

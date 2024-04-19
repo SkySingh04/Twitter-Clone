@@ -48,6 +48,19 @@ const RightSidebar = () => {
             ))}
           </div>
         </div>
+        <div class="bg-black-200 p-4 my-4">
+          <div class="flex justify-center">
+            <div class="grid grid-cols-3 gap-4">
+              <a href="#" class="text-gray-600 text-sm  hover:border-white-500">Terms of service</a>
+              <a href="#" class="text-gray-600 text-sm">Privacy Policy</a>
+              <a href="#" class="text-gray-600 text-sm">Cookie Policy</a>
+              <a href="#" class="text-gray-600 text-sm">Accessibility</a>
+              <a href="#" class="text-gray-600 text-sm">
+                © 2024 X Corp.</a>
+
+            </div>
+          </div>
+        </div>
       </div>
     </>
   )
