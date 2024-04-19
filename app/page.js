@@ -8,18 +8,19 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 export default function Home() {
   const [usersInfoList, setUsersInfoList] = useState([]);
+  const [user , setUser] = useState(null)
   const router = useRouter()
-  // useEffect(() => {
-  //   // Check the user's authentication state
-  //   onAuthStateChanged(auth, (user) => {
-  //     if (user) {
-  //       setUser(user);
-  //     } else {
-  //       // Redirect unauthenticated users to the login page
-  //       router.push('/login');
-  //     }
-  //   })
-  // })
+  useEffect(() => {
+    // Check the user's authentication state
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        // Redirect unauthenticated users to the login page
+        router.push('/login');
+      }
+    })
+  })
   useEffect(() => {
   const fetchUserData = async () => {
     try {
