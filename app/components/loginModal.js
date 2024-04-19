@@ -4,23 +4,28 @@ import { IoMdClose } from "react-icons/io";
 import { FaXTwitter } from "react-icons/fa6";
 import { useState } from "react";
 import firebase from "firebase/app";
+import { auth } from "@/firbase";
 import "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useRouter } from "next/navigation";
 
 export default function LoginModal({ closeModal }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
-
+  const router = useRouter();
   function handleCloseLoginModal() {
     closeModal();
   }
 
   async function handleLogin() {
     try {
-      await firebase.auth().signInWithEmailAndPassword(email, password);
+      await signInWithEmailAndPassword(auth , email, password);
       handleCloseLoginModal();
+      router.push("/");
     } catch (error) {
       setError(true);
+      console.log(error);
     }
   }
 
