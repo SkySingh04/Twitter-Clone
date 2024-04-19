@@ -118,13 +118,6 @@ export default function CreateAccModal({ closeModal }) {
             className={classes.input}
             name="profileImg"
           />
-          {/* {inputType === "phone" && (
-            <input placeholder="Phone" className={classes.input} name="phone" />
-          )} */}
-
-          {/* <button className={classes.changeType} onClick={handleChangeType}>
-            use {inputType === "phone" ? "email" : "phone"} instead
-          </button> */}
           <div className={classes.birthCon}>
             <h1>Date of birth</h1>
             <p>
