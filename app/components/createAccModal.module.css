@@ -3,7 +3,7 @@
   right: 0;
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 130vh;
   background-color: blue;
   opacity: 0.2;
 }
@@ -118,4 +118,18 @@
   font-weight: 700;
   padding: 1rem 2rem;
   border-radius: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .backdrop {
+    display: none;
+  }
+  .createCon {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+  .next{
+    width: 100%;
+  }
 }

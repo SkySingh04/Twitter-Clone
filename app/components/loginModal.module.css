@@ -44,13 +44,13 @@
   align-items: center;
 }
 .main {
-    flex: 1;
-    width: 100%;
-    padding: 0.5rem 2rem;
-    display: flex;
-    flex-flow: column wrap;
-    gap: 1rem;
-  }
+  flex: 1;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+}
 .title {
   font-size: 2rem;
   font-weight: 700;
@@ -72,31 +72,34 @@
   border: 1px solid rgb(29, 155, 240);
 }
 .next {
-    margin-top: 1rem;
-    width: 100%;
-    background-color: white;
-    text-align: center;
-    color: black;
-    font-weight: 700;
-    padding: 1rem 2rem;
-    border-radius: 2rem;
-  }
-  .error{
-    color: red;
-    font-size: 1rem;
-    text-align: center;
-  }
+  margin-top: 1rem;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  color: black;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+}
+.error {
+  color: red;
+  font-size: 1rem;
+  text-align: center;
+}
 
-  @media screen and (max-width: 768px) {
-    .backdrop{
-      display: none;
-    }
-    .createCon {
-      position: absolute;
-      top:0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-    }
-    
+@media screen and (max-width: 768px) {
+  .backdrop {
+    display: none;
   }
+  .createCon {
+    position: absolute;
+    width: 100%;
+    height: 120vh;
+    bottom: 0;
+    left: 0;
+    top: 0;
+  }
+  .next {
+    width: 100%;
+  }
+}
