@@ -7,11 +7,18 @@ import CreateAccModal from "../components/createAccModal";
 import { useState } from "react";
 export default function LoginPage() {
   const [isopenCreateModal, setisOpenCreateModal] = useState(false);
+  const [isopenLoginModal, setisOpenLoginModal] = useState(false);
   function handleOpenCreateAcc(){
     setisOpenCreateModal(true);
   }
   function handleCloseCreateAcc(){
     setisOpenCreateModal(false);
+  }
+  function handleOpenLogin(){
+    setisOpenLoginModal(true);
+  }
+  function handleCloseLogin(){
+    setisOpenLoginModal(false);
   }
   return (
     <div>

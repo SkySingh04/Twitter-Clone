@@ -5,7 +5,7 @@ import classes from "./createAccModal.module.css";
 import { useEffect, useState } from "react";
 
 export default function CreateAccModal({ closeModal }) {
-  const [inputType, setInputType] = useState("phone");
+  // const [inputType, setInputType] = useState("phone");
   const [days, setDays] = useState([]);
   const [years, setYears] = useState([]);
 
@@ -31,9 +31,9 @@ export default function CreateAccModal({ closeModal }) {
     // Handle change logic here
   };
 
-  function handleChangeType() {
-    setInputType((prev) => (prev === "phone" ? "email" : "phone"));
-  }
+  // function handleChangeType() {
+  //   setInputType((prev) => (prev === "phone" ? "email" : "phone"));
+  // }
   return (
     <>
       <div className={classes.backdrop}></div>
@@ -49,15 +49,24 @@ export default function CreateAccModal({ closeModal }) {
         <main className={classes.main}>
           <h1 className={classes.title}>Create your account</h1>
           <input placeholder="Name" className={classes.input} name="name" />
-          {inputType === "phone" && (
+          <input placeholder="Email" className={classes.input} name="email" />
+          <input
+            placeholder="Banner url"
+            className={classes.input}
+            name="banner"
+          />
+          <input
+            placeholder="profile image url"
+            className={classes.input}
+            name="profileImg"
+          />
+          {/* {inputType === "phone" && (
             <input placeholder="Phone" className={classes.input} name="phone" />
-          )}
-          {inputType === "email" && (
-            <input placeholder="Email" className={classes.input} name="email" />
-          )}
-          <button className={classes.changeType} onClick={handleChangeType}>
+          )} */}
+
+          {/* <button className={classes.changeType} onClick={handleChangeType}>
             use {inputType === "phone" ? "email" : "phone"} instead
-          </button>
+          </button> */}
           <div className={classes.birthCon}>
             <h1>Date of birth</h1>
             <p>
