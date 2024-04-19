@@ -21,17 +21,6 @@ const Input = () => {
                     <hr className='text-white'></hr>
                 </div>
                 <div className="flex items-center justify-between">
-                    {/*Items aligned to the left */}
-                    {/* <div className="flex">
-                        <div className="w-1/6 bg-black-200 h-16 flex items-center justify-center"></div>
-                        <div className="w-1/6 bg-black-200 h-16 flex items-center justify-center"></div>
-                        <div className="w-1/6 bg-black-200 h-16 flex items-center justify-center"></div>
-                        <div className="w-1/6 bg-black-200 h-16 flex items-center justify-center"></div>
-                        <div className="w-1/6 bg-black-200 h-16 flex items-center justify-center"></div>
-                        <div className="w-1/6 bg-black-200 h-16 flex items-center justify-center"></div>
-                    </div> */}
-
-                    {/* Button aligned to the right */}
                     <button className="bg-blue-500 text-white px-8 py-2 rounded br-6">Post</button>
                 </div>
                 <hr class="border border-white"></hr>
