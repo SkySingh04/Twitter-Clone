@@ -22,7 +22,7 @@ const Card = ({ user, tweet }) => {
             <GoDotFill color="#fafafa44" size={10} />
           </div>
           <p className="text-gray-300">
-            {tweet.timestamp.toDate().toDateString()}
+            
           </p>
         </div>
         <p className="text-white">{tweet.content}</p>

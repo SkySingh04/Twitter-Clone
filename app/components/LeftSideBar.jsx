@@ -49,7 +49,7 @@ const LeftSideBar = ({user}) => {
                 <div>Explore</div>
               </div>
             </Link>
-            <Link href="/profile">
+            <Link href={`/${user?.uid}`}>
               <div className="logo-item flex gap-2">
                 <CgProfile size={20} />
                 <div>Profile</div>

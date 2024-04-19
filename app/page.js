@@ -53,7 +53,7 @@ export default function Home() {
     <div className="flex w-full">
       <LeftSideBar  user={user}/>
     <main className="main-content w-full p-4">
-    <Input />
+    <Input user={user}/>
     {usersInfoList.length!==0 && usersInfoList.map((user, index) => (
       user.tweets &&
           user.tweets.map((tweet) => (
